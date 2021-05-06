@@ -1,0 +1,351 @@
+/* *{
+    border: red 1px solid;
+} */
+
+
+/*    --|fix|--
+    .clearfix:after {
+	content:'';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+div {
+	box-sizing: border-box;
+} */
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'NeoSansPro';
+    src: url("../fonts/NeoSansProCyr-Bold.eot"),
+    url("../fonts/NeoSansProCyr-Bold.woff") format("woff"),
+    url("../fonts/NeoSansProCyr-Bold.ttf") format("trueType"),
+    url("../fonts/NeoSansProCyr-Bold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.downUp_Anim{
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.downUp_Anim._active{
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.upper{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px;
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: rgba(10, 37, 54, 0.92);
+}
+.social{
+    padding: 10px;
+    padding-left: 30px;
+    float: right;
+}
+#social{
+    margin-right: 20px;
+    display: block;
+    margin-top: 10px;
+    float: right
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(122deg, #00b9d4, #841999);
+    background-size: 250% 250%;
+    animation: back 32s linear infinite;
+}
+  
+@keyframes back {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+/*------------------------------------------------------------------------------------*/
+
+.container{
+    padding-left: 6vw;
+    padding-right: 6vw;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container_title{
+    padding-top: 75px;
+}
+
+.container_body{
+    width: 100%;
+    flex: 1 1 auto; 
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#ke{
+    max-width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.imgCont{
+    float: right;
+    max-width: 40%;
+    height: 100%;
+}
+
+#landInfo{
+    height: 100%;
+    position: relative;
+    padding-top: 100px;
+    width: 60%;
+    color: white;
+    float: left;
+}
+
+.shadow{
+    width: 86%;
+    height: 92px;
+    bottom: 75px;
+    left: 20px;
+    border: 3px solid #4980d1;
+    border-radius: 2px;
+    position: relative;
+}
+
+#startInfo{
+    width: 86%;
+    height: 92px;
+    position: relative;
+    z-index: 99;
+    text-align: center;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 22px;
+    padding-bottom: 10px;
+    border: 3px white solid;
+    border-radius: 2px;
+    color: white;
+    font-family: 'NeoSansPro';
+    font-weight: lighter;
+    font-size: 200%; 
+}
+
+
+#secondInf{
+    width: 80%;
+    padding-top: 0px;
+    text-align: left;
+    word-wrap: break;
+    font-size: 175%;
+    position: relative;
+    left: 80px;
+}
+
+.down{
+    padding-top: 6%;
+    word-spacing: 2px;
+    display: inline-block;
+    align-self: center;
+    text-align: center; 
+}
+
+#downButton{
+   position: relative;
+   z-index: 99;
+   padding: 20px 56px;
+   border: 3px solid #404120;
+   border-radius: 30px;
+   font-size: 16px;
+   line-height: 20px;
+   font-family: roboto,sans-serif;
+   font-weight: 600;
+   color: #404120;
+   text-decoration: none;
+   font-size: 120%;
+}
+
+#doubleDown{
+    height: 80%;
+    padding-top: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+#downButton:hover{
+   transition: .4s;
+   background: #404120;
+   color: #fff;
+}
+
+#downButton:hover~#doubleDown{
+   transform: translate(0px, 2px);
+}
+
+@media screen and (max-width: 1440px) {
+
+    .shadow{
+        height: 72px;
+        bottom: 55px;
+    }
+    
+    #startInfo{
+        height: 72px;
+        font-size: 170%; 
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .down{
+        padding-top: 10%;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .container{
+        display: block;
+    }
+    
+    .social{
+        display: none;
+    }
+    
+    .down{
+        padding-top: none;
+        padding-bottom: 14vh;
+    }
+
+    #doubleDown{
+        display: none;
+    }
+
+    #landInfo, .imgCont{
+        margin: 0 auto;
+        height: 50%;
+        width: 100%;
+        float: none;
+    }
+
+    #landInfo{
+        padding-bottom: 10vh;
+    }
+
+    .imgCont{
+        max-width: 60%;
+    }
+
+    #ke{
+        width: 100%;
+        top: none;
+        transform: none;
+        padding-bottom: 10vh;
+    }
+
+    #startInfo, .shadow{
+        margin: 0 auto;
+    }
+
+    #secondInf{
+        left: none;
+        margin: 0 auto;
+        position: static;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .imgCont{
+        max-width: 70%;
+    }
+
+    #startInfo, .shadow{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .imgCont{
+        max-width: 74%;
+    }
+
+    #landInfo{
+        padding-top: 60px;
+    }
+
+    .container{
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    #startInfo{
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 160%; 
+    }
+
+    #startInfo{
+        left: -5px;
+    }
+
+    .shadow{
+        left: 5px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #startInfo{
+        font-size: 140%; 
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #startInfo{
+        font-size: 120%; 
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #startInfo{
+        font-size: 110%; 
+    }
+}
