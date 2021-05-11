@@ -7,14 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <title>About Didar</title>
-    <script type="text/javascript" src="js/script.js"> </script>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(document).ready(function () {
+            $('.burger').click(function (event) {
+                $('.socList, .socList li, body, .burger').toggleClass('active');
+            });
+        });
     </script>
-</head>
-
-<body style="margin: 0; padding: 0;">
     <!--
     JS код для того, чтобы задать значение CSS-свойства("property") 
     одного элемента(firstSelector) - другому(secondSelector)
@@ -32,48 +35,121 @@
         });
     </script>
     -->
-    <header>
-        <div class="container">
-            <div class="container_body">
-                <div class="upper">
-                    <a href="https://www.youtube.com/watch?v=IBH1KnzAGTU"><img src="img/logo.png" style="float: left; height: 100%;"></a>
-                    <div id="social">
-                        <img class="social" src="img/inst.png">
-                        <img class="social" src="img/vk.png">
-                        <img class="social" src="img/yt.png">
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <div class="wrapper">
+        <div id="help">
+            <button id="helpBtn">эй, псс</button>
+            <div class="helpInfo">
+                <h3 style="text-align:center;">Нашли проблему? Сообщите нам!</h3>
+                <ul style="padding-top: 20px; padding-left: 20px;">
+                    <li>+7 705 195 88 43</li>
+                    <li>+7 705 195 88 43</li>
+                </ul>
+                или
+                <ul style="padding-top: 20px; padding-left: 20px;">
+                    <li>+7 705 195 88 43</li>
+                    <li>+7 705 195 88 43</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="#trigger" class="scrollto">
+            <button id="upBtn" class="lock-margin">
+                <img src="img/down.png" alt="up">
+            </button>
+        </a>
+
+        <a href="#popup" class="popup-Link">
+            <button id="helpBtnT"></button>
+        </a>
+        <header class="lock-padding">
+            <div class="container">
+                <div class="container_body">
+                    <div class="upper _active" id="trigger">
+                        <div class="upper">
+                            <a href="https://www.youtube.com/watch?v=IBH1KnzAGTU"><img src="img/logo.png"
+                                    style="float: left; height: 100%; padding-left: 20px;"></a>
+                            <div class="burger">
+                                <span></span>
+                            </div>
+                        </div>
+                        <ul class="socList lock-padding">
+                            <li><a class="social">ABOUT ME</a></li>
+                            <li><a class="social">GALLERY</a></li>
+                            <li><a class="social">CONTACTS</a></li>
+                            <!-- 
+                        <li><img class="social" src="img/inst.png"></li>
+                        <li><img class="social" src="img/vk.png"></li>
+                        <li><img class="social" src="img/yt.png"></li> 
+                        -->
+                        </ul>
                     </div>
-                </div> 
-                <div class="container_title">
-                    <div id="landInfo">
-                        <h1 id="startInfo">Мой личный сайт - портфолио</h1>
-                        <div class="shadow"></div>
-                        <p id="secondInf">
-                            Привет, я Даня!<br>
-                            И это сайт обо мне,
-                            если ты хочешь узнать меня поближе, то тебе сюда
-                        </p>
+                    <div class="container_title">
+                        <div id="landInfo">
+                            <h1 id="startInfo">Мой личный сайт - портфолио</h1>
+                            <div class="shadow"></div>
+                            <p id="secondInf">
+                                Привет, я Даня!<br>
+                                И это сайт обо мне,
+                                если ты хочешь узнать меня поближе, то тебе сюда
+                            </p>
+                        </div>
+                        <div class="imgCont">
+                            <img src="img/ke.png" id="ke">
+                        </div>
                     </div>
-                    <div class="imgCont">
-                        <img src="img/ke.png" id="ke">
+                    <div class="down">
+                        <a id="downButton" href="#topKon" class="scrollto">MORE INFO</a>
+                        <img src="img/double-down.png" id="doubleDown">
                     </div>
                 </div>
-                <div class="down">
-                    <a id="downButton" href="#topKon">MORE INFO</a>
-                    <img src="img/double-down.png" id="doubleDown">
+            </div>
+        </header>
+        <section class="parallax"></section>
+
+        <section id="topKon">
+            <h1 class="anims downUp_Anim">Швейца́рия (нем. die Schweiz, фр. Suisse, итал. Svizzera, романш. Svizra),
+                официально — Швейца́рская Конфедера́ция (лат. Confoederatio Helvetica, нем. Schweizerische
+                Eidgenossenschaft, фр. Confédération suisse, итал. Confederazione Svizzera, романш. Confederaziun
+                svizra) —
+                суверенное государство, федеративная республика, состоящая из 26 кантонов с федеральными властями в
+                Берне[10].</h1>
+        </section>
+        <section>
+            <p id="test">Швейца́рия (нем. die Schweiz, фр. Suisse, итал. Svizzera, романш. Svizra), официально —
+                Швейца́рская Конфедера́ция (лат. Confoederatio Helvetica, нем. Schweizerische Eidgenossenschaft, фр.
+                Confédération suisse, итал. Confederazione Svizzera, романш. Confederaziun svizra) — суверенное
+                государство,
+                федеративная республика, состоящая из 26 кантонов с федеральными властями в Берне[10].</p>
+        </section>
+        <section style="background-color: hotpink; height: 150vh;">
+            <h3>hei</h3>
+        </section>
+        <footer>
+            prod. by Timpuheen
+        </footer>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="" class="popup_close close-popup">☓</a>
+                <div class="popup_title">Нашли ошибку? Сообщите нам!</div>
+                <div class="popup_text">
+                    Гренла́ндия (гренл. Kalaallit Nunaat, дат. Grønland) — крупнейший на Земле[1] остров.
+                    Расположен на северо-востоке Северной Америки, а потому с точки зрения физической географии
+                    относится к ней.
+                    Политически относится к Европе, поскольку вместе с окружающими меньшими островами образует
+                    административную автономную единицу Гренландию,
+                    принадлежащую Дании[2][3][4]. Омывается Атлантическим и Северным Ледовитым океанами. Его площадь
+                    составляет 2 130 800 км²,
+                    протяжённость с севера на юг составляет 2700 км, а с запада на восток — 1300 км. По площади он в
+                    три раза уступает Австралии — наименьшему из континентов[5].
                 </div>
             </div>
         </div>
-    </header>
-    <section id="topKon">
-        <h1 class="anims downUp_Anim">hei</h1>
-    </section>
-    <section>
-        <p id="test">dddddd dddddddddddd ddddddddddddddddd dddddddddddd dddddddddd ddddddsd</p>
-    </section>
-    <section>
-        <h3>hei</h3>
-    </section>
-    <footer>
-        prod. by Timpuheen
-    </footer>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
 </body>

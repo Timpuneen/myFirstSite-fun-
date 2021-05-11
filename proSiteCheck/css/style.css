@@ -15,6 +15,10 @@ div {
 	box-sizing: border-box;
 } */
 
+*{
+    font-family: "Roboto", sans-serif;
+}
+
 *,
 *:before,
 *:after{
@@ -24,12 +28,19 @@ div {
     box-sizing: border-box;
 }
 
-* {
-    font-family: "Roboto", sans-serif;
-}
-
 html,body{
     height: 100%;
+}
+
+.wrapper{
+    position: absolute;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+
+body.lock{
+    overflow: hidden;
 }
 
 @font-face {
@@ -41,6 +52,7 @@ html,body{
     font-weight: normal;
     font-style: normal;
 }
+
 
 .downUp_Anim{
     transform: translate(0px, 120%);
@@ -54,26 +66,41 @@ html,body{
 }
 
 .upper{
+    z-index: 10;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     height: 75px;
-    padding-left: 20px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    background-color: rgba(10, 37, 54, 0.92);
+    background-color: rgba(10, 36, 54);
 }
-.social{
-    padding: 10px;
-    padding-left: 30px;
+
+.socList{
+    position: relative;
+    z-index: 11;
+    height: 100%;
     float: right;
+    display: flex;
+    list-style: none;
 }
+
+.socList li{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #social{
-    margin-right: 20px;
-    display: block;
-    margin-top: 10px;
+    height: 100%;
+    display:block;
     float: right
+}
+
+.social{
+    padding-right: 30px;
+    font-weight: bold;
+    color: white;
+    float: right;
 }
 
 header {
@@ -84,7 +111,7 @@ header {
     background-size: 250% 250%;
     animation: back 32s linear infinite;
 }
-  
+
 @keyframes back {
     0%{
         background-position: 0 50%;
@@ -95,6 +122,149 @@ header {
     100% {
         background-position: 0 50%;
     }
+}
+
+#upBtn{
+    opacity: 0;
+    background: #ed336c;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgb(230 50 110 / 20%);
+    position: fixed;
+    right: 40px;
+    bottom: -40px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    word-spacing: 5px;
+    transition:bottom 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+
+
+#upBtn._activ{
+    opacity: 1;
+    bottom: 40px;
+}
+
+
+#help{
+    transition: transform 2s;
+    position: fixed;
+    bottom: 0;
+    left: -400px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+#helpBtn{
+    outline: none;
+    background: #573941;
+    width: 120px;
+    height: 30px;
+    position: relative;
+    bottom: -100px;
+    left: 355px;
+    border: none;
+    color: #fff;
+    letter-spacing: 2px;
+    transform: rotate(90deg);
+    -webkit-border-radius: 5px 40px 0px 0px;
+    -moz-border-radius: 5px 40px 0px 0px;
+    border-radius: 5px 40px 0px 0px;
+}
+
+.helpInfo{
+    background: #fff;
+    width: 400px;
+    height: 280px;
+}
+
+#help:hover{
+    transform: translate(400px,0);
+}
+
+#helpBtnT{
+    display: none;
+    background: #ed336c;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    left: 40px;
+    bottom: 40px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    word-spacing: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popup_content{
+    transform: translate(0,0) perspective(600px) rotateX(0);
+    opacity: 1;
+}
+
+.popup_body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    transition: all 0.8s ease 0s;
+}
+
+.popup_content{
+    background-color: #fff;
+    color: #000;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    opacity: 0;
+    transform: translate(0px, -100%) perspective(600px) rotateX(45deg);
+    transition: all 0.8s ease 0s;
+}
+
+.popup_close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color:#000;
+    text-decoration: none;
+}
+
+.popup_title{
+    font-size: 40px;
+    margin: 0px 0px 1em 0px;
+}
+
+.popup_text{
+
 }
 /*------------------------------------------------------------------------------------*/
 
@@ -147,7 +317,7 @@ header {
     height: 92px;
     bottom: 75px;
     left: 20px;
-    border: 3px solid #4980d1;
+    border: 3.5px solid #4980d1;
     border-radius: 2px;
     position: relative;
 }
@@ -156,13 +326,13 @@ header {
     width: 86%;
     height: 92px;
     position: relative;
-    z-index: 99;
+    z-index: 1;
     text-align: center;
     padding-left: 18px;
     padding-right: 18px;
     padding-top: 22px;
     padding-bottom: 10px;
-    border: 3px white solid;
+    border: 3.5px white solid;
     border-radius: 2px;
     color: white;
     font-family: 'NeoSansPro';
@@ -191,7 +361,7 @@ header {
 
 #downButton{
    position: relative;
-   z-index: 99;
+   z-index: 1;
    padding: 20px 56px;
    border: 3px solid #404120;
    border-radius: 30px;
@@ -211,18 +381,17 @@ header {
     margin: 0 auto;
 }
 
-#downButton:hover{
-   transition: .4s;
-   background: #404120;
-   color: #fff;
-}
-
 #downButton:hover~#doubleDown{
    transform: translate(0px, 2px);
 }
 
-@media screen and (max-width: 1440px) {
+.parallax{
+    min-height: 100vh;
+    display: flex;
+    background: url("../img/navi.png") center / cover no-repeat fixed;
+}
 
+@media screen and (max-width: 1440px) {
     .shadow{
         height: 72px;
         bottom: 55px;
@@ -240,14 +409,116 @@ header {
     }
 }
 
+@media screen and (min-width: 992px) {
+    #downButton:hover{
+        transition: .4s;
+        background: #404120;
+        color: #fff;
+    }
+}
 
 @media screen and (max-width: 991px) {
-    .container{
+    #helpBtnT{
         display: block;
     }
-    
-    .social{
+
+    #help{
         display: none;
+    }
+
+    .socList li{
+        /* text-align: left; */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 180%;
+    }
+
+    .socList li:last-child{
+        padding-bottom: 90px;
+    }
+
+    .socList{
+        transition: all 0.3s ease 0s;
+        display: block;
+        opacity: 0.95;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: -100vh;
+        z-index: 2;
+        background-color: grey;
+        overflow: auto;
+    }
+
+    .socList.active{
+        top: 75px;
+    }
+
+    body.active{
+        overflow: hidden;
+    }
+    
+    .burger.active:before{
+        transform: rotate(45deg);
+        top: 12px;
+    }
+
+    .burger.active:after{
+        transform: rotate(-45deg);
+        bottom: 12px;
+    }
+
+    .burger.active span{
+        transform: scale(0);
+    }
+
+    .burger{
+        float: right;
+        display: block;
+        position: relative;
+        top: 22px;
+        right: 20px;
+        width: 40px;
+        height: 25px;
+    }
+
+    .burger span{
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        top: 12px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .burger:before, .burger:after{
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .burger:before{
+        top: 0;
+    }
+
+    .burger:after{
+        bottom: 0;
+    }
+
+    #downButton:active{
+        transition: .4s;
+        background: #404120; 
+        color: #fff;
+    }
+
+    .container{
+        display: block;
     }
     
     .down{

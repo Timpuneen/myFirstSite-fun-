@@ -9,7 +9,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 window.onload = function() {
-const anime = document.querySelectorAll('.anims');
+const anime = document.querySelectorAll('.anims, #trigger');
 
 if(anime.length>0){
     window.addEventListener('scroll', animScroll);
@@ -42,3 +42,28 @@ if(anime.length>0){
 }
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+$(function(){
+    window.addEventListener('scroll', scroller);
+    function scroller(){
+        let el = $('#trigger').attr('class');
+        if(el.includes('_active')){
+            $('#upBtn').removeClass("_activ");
+        }
+        else{
+            $('#upBtn').addClass("_activ");
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//------Код для плавной прокрутки к элементу------//
+
+    $("a.scrollto").click(function() {
+        var elementClick = $(this).attr("href")
+        var destination = $(elementClick).offset().top;
+        jQuery("html:not(:animated),body:not(:animated)").animate({
+        scrollTop: destination
+        }, 800);
+        return false;
+    });
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////
+});
