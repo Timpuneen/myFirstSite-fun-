@@ -74,8 +74,8 @@ function bodyLock() {
         }
     }
 
+    //body.style.paddingRight = lockPaddingValue;
     body.classList.add('lock');
-    body.style.paddingRight = lockPaddingValue;
 
     unlock = false;
     setTimeout(function () {
@@ -98,8 +98,10 @@ function bodyUnLock() {
                 el.style.paddingRight = '0px';
             }
         }
-        body.style.paddingRight = '0px';
+
+        //body.style.paddingRight = '0px';
         body.classList.remove('lock');
+
     }, timeout);
 
     unlock = false;

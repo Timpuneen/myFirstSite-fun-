@@ -8,12 +8,12 @@
     <meta charset="UTF-8">
     <title>About Didar</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-        </script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
     <script>
-        $(document).ready(function () {
-            $('.burger').click(function (event) {
+        $(document).ready(function() {
+            $('.burger').click(function(event) {
                 $('.socList, .socList li, body, .burger').toggleClass('active');
             });
         });
@@ -69,9 +69,8 @@
                 <div class="container_body">
                     <div class="upper _active" id="trigger">
                         <div class="upper">
-                            <a href="https://www.youtube.com/watch?v=IBH1KnzAGTU"><img src="img/logo.png"
-                                    style="float: left; height: 100%; padding-left: 20px;"></a>
-                            <div class="burger">
+                            <a href="https://www.youtube.com/watch?v=IBH1KnzAGTU"><img src="img/logo.png" style="float: left; height: 100%; padding-left: 20px;"></a>
+                            <div class="burger lock-margin">
                                 <span></span>
                             </div>
                         </div>
@@ -91,9 +90,7 @@
                             <h1 id="startInfo">Мой личный сайт - портфолио</h1>
                             <div class="shadow"></div>
                             <p id="secondInf">
-                                Привет, я Даня!<br>
-                                И это сайт обо мне,
-                                если ты хочешь узнать меня поближе, то тебе сюда
+                                Привет, я Даня!<br> И это сайт обо мне, если ты хочешь узнать меня поближе, то тебе сюда
                             </p>
                         </div>
                         <div class="imgCont">
@@ -108,27 +105,96 @@
             </div>
         </header>
         <section class="parallax"></section>
-
         <section id="topKon">
-            <h1 class="anims downUp_Anim">Швейца́рия (нем. die Schweiz, фр. Suisse, итал. Svizzera, романш. Svizra),
-                официально — Швейца́рская Конфедера́ция (лат. Confoederatio Helvetica, нем. Schweizerische
-                Eidgenossenschaft, фр. Confédération suisse, итал. Confederazione Svizzera, романш. Confederaziun
-                svizra) —
-                суверенное государство, федеративная республика, состоящая из 26 кантонов с федеральными властями в
-                Берне[10].</h1>
+            <div class="containerS lock-margin">
+                <h1 class="anims op_Anim std">ОБО МНЕ</h1>
+                <img src="img/avo.png" alt="" class="int anims leftRight_Anim">
+                <p class="inf anims downUp_Anim">
+                    Соединённые Шта́ты Аме́рики (англ. The United States of America [ði juˌnaɪtɪd ˌsteɪts əv əˈmerɪkə]), сокращённо США (англ. USA), или Соединённые Шта́ты (англ. United States, U.S., в просторечии — Аме́рика) — государство в Северной Америке. Площадь — 9,5
+                    млн км²[* 3][5] (4-е место в мире).
+                </p>
+                <p class="inf anims downUp_Anim">
+                    Население — около 329 млн человек (2020, оценка; 3-е место в мире). США имеют федеративную форму устройства, административно делятся на 50 штатов и федеральный округ Колумбия; в их подчинении также находится ряд островных территорий (Пуэрто-Рико, Виргинские
+                    Острова, Гуам и другие).
+                </p>
+                <p class="inf anims downUp_Anim">
+                    Столица — город Вашингтон (округ Колумбия), а самым крупным по численности населения является город Нью-Йорк. Соединённые Штаты граничат на севере с Канадой, на юге — с Мексикой, также имеют морскую границу с Россией на западе. Омываются Тихим океаном
+                    с запада, Атлантическим океаном — с востока и Северным Ледовитым океаном — с севера.
+                </p>
+            </div>
         </section>
         <section>
-            <p id="test">Швейца́рия (нем. die Schweiz, фр. Suisse, итал. Svizzera, романш. Svizra), официально —
-                Швейца́рская Конфедера́ция (лат. Confoederatio Helvetica, нем. Schweizerische Eidgenossenschaft, фр.
-                Confédération suisse, итал. Confederazione Svizzera, романш. Confederaziun svizra) — суверенное
-                государство,
-                федеративная республика, состоящая из 26 кантонов с федеральными властями в Берне[10].</p>
         </section>
-        <section style="background-color: hotpink; height: 150vh;">
-            <h3>hei</h3>
+        <section>
+            <div class="containerS lock-margin">
+                <h1 class="std">MY GALLERY</h1>
+                <div class="image-slider swiper-container">
+                    <div class="image-slider_wrapper swiper-wrapper">
+                        <div class="image-slider_slide swiper-slide">
+                            <div class="image-slider_image">
+                                <img src="img/avo1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="image-slider_slide swiper-slide">
+                            <div class="image-slider_image">
+                                <img src="img/avo2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="image-slider_slide swiper-slide">
+                            <div class="image-slider_image">
+                                <img src="img/avo3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="image-slider_slide swiper-slide">
+                            <div class="image-slider_image">
+                                <img src="img/avo4.png" alt="">
+                            </div>
+                        </div>
+                        <div class="image-slider_slide swiper-slide">
+                            <div class="image-slider_image">
+                                <img src="img/avo5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+            </div>
         </section>
         <footer>
-            prod. by Timpuheen
+            <div class="containerS footer">
+                <div class="footCont lock-margin">
+                    <div class="main">
+                        <div style="display:flex; justify-content: center;">
+                            <img src="img/logoLight.png" alt="">
+                            <h2 style="align-self: center; font-family: 'NeoSansPro';
+                            font-weight: lighter;">DIDAR CO.</h2>
+                        </div>
+                        <ul id="soloSoc">
+                            <li><img src="img/vk.png" alt=""></li>
+                            <li><img src="img/yt.png" alt=""></li>
+                            <li><img src="img/inst.png" alt=""></li>
+                        </ul>
+                        <h5 style="text-align: left; margin: 0 auto;">2020-2021 © DIDAR<br><br>Все права защищены</h5>
+                    </div>
+                    <div class="contacts">
+                        <h2 style="font-family: 'NeoSansPro';font-weight: lighter;">CONTACTS</h2>
+                        <ul>
+                            <li>+7-705-195-8843</li>
+                            <li>+7-700-260-3976</li>
+                            <h5><strong>OR</strong>
+                            </h5>
+                            <li>timpuh_work@mail.ru</li>
+                            <li>timpuhin@gmail.com</li>
+                        </ul>
+                    </div>
+                    <span id="THEND" class="lock-margin">prod. by<br> <strong><i>Timpuheen</i></strong></span>
+                </div>
+
+            </div>
         </footer>
     </div>
     <div class="popup" id="popup">
@@ -137,19 +203,15 @@
                 <a href="" class="popup_close close-popup">☓</a>
                 <div class="popup_title">Нашли ошибку? Сообщите нам!</div>
                 <div class="popup_text">
-                    Гренла́ндия (гренл. Kalaallit Nunaat, дат. Grønland) — крупнейший на Земле[1] остров.
-                    Расположен на северо-востоке Северной Америки, а потому с точки зрения физической географии
-                    относится к ней.
-                    Политически относится к Европе, поскольку вместе с окружающими меньшими островами образует
-                    административную автономную единицу Гренландию,
-                    принадлежащую Дании[2][3][4]. Омывается Атлантическим и Северным Ледовитым океанами. Его площадь
-                    составляет 2 130 800 км²,
-                    протяжённость с севера на юг составляет 2700 км, а с запада на восток — 1300 км. По площади он в
-                    три раза уступает Австралии — наименьшему из континентов[5].
+                    Гренла́ндия (гренл. Kalaallit Nunaat, дат. Grønland) — крупнейший на Земле[1] остров. Расположен на северо-востоке Северной Америки, а потому с точки зрения физической географии относится к ней. Политически относится к Европе, поскольку вместе с окружающими
+                    меньшими островами образует административную автономную единицу Гренландию, принадлежащую Дании[2][3][4]. Омывается Атлантическим и Северным Ледовитым океанами. Его площадь составляет 2 130 800 км², протяжённость с севера на юг составляет
+                    2700 км, а с запада на восток — 1300 км. По площади он в три раза уступает Австралии — наименьшему из континентов[5].
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/myslick.js"></script>
 </body>
